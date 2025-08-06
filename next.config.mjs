@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: '/ficufish-landing',
+    //basePath: '/ficufish-landing',
     output: 'export',
 };
 
