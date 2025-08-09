@@ -21,10 +21,7 @@ export default function Home() {
         </div>
         <ol className="font-mono list-inside list-none text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
-            We research and develop innovative solutions
-          </li>
-          <li className="tracking-[-.01em]">
-           for communities around the world.
+            We research and develop innovative solutions empowering people and organizations worldwide to create thriving circular economies.
           </li>
         </ol>
 
