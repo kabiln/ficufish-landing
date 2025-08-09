@@ -11,7 +11,7 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div className="flex flex-row row-auto items-center sm:items-center-safe">
           <Lottie
-          className="w-32 h-32"
+          className="w-32"
           animationData={animationData}
           loop={true}
           />
@@ -19,7 +19,7 @@ export default function Home() {
             ficufish
           </h1>
         </div>
-        <ol className="font-mono list-inside list-none text-sm/6 text-center sm:text-left">
+        <ol className="font-mono list-inside list-none text-sm/6 text-center sm:text-left w-xl">
           <li className="mb-2 tracking-[-.01em]">
             We research and develop innovative solutions empowering people and organizations worldwide to create thriving circular economies.
           </li>
