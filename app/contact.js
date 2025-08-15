@@ -10,7 +10,7 @@ import React, { useState } from 'react';
                 Accept: "application/json",
             },
             body: JSON.stringify({
-                access_key: "39cefe42-ef46-4bd9-9354-6a6724a2b325",
+                access_key: "YOUR_ACCESS_KEY_HERE",
                 name: e.target.name.value,
                 email: e.target.email.value,
                 message: e.target.message.value,
@@ -23,54 +23,22 @@ import React, { useState } from 'react';
     }
 
   return (
-<div className="flex items-center justify-center p-4 sm:p-6">
+    <div className="flex items-center justify-center p-4 sm:p-6">
       <div className="max-w-xl md:w-xl sm:w-md rounded-xl p-8 space-y-2 transform transition-all duration-300 hover:scale-[1.01]">
  
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name Field */}
+      <form onSubmit={handleSubmit} className="space-y-6">
           <div className="relative">
-            <div className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-300" size={20} />
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-              className="w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white transition duration-200 text-gray-300"
-            />
+              <input type="text" name="name" required placeholder="Your name" className="w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white transition duration-200 text-gray-300" />
           </div>
-
-          {/* Email Field */}
           <div className="relative">
-            <div className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-300" size={20} />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-              className="w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white transition duration-200 text-gray-300"/>
+              <input type="email" name="email" required placeholder="email@example.com" className="w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white transition duration-200 text-gray-300"/>
           </div>
-
-          {/* Message Textarea */}
           <div className="relative">
-            <div className="absolute top-4 left-3 text-gray-300" size={20} />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="5"
-              required
-              className="w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white transition duration-200 text-gray-300 resize-none"
-            />
+              <textarea name="message" required rows="3" placeholder="Enter Message" className='w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white transition duration-200 text-gray-400 bg-auto appearance-none'></textarea>
           </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full bg-slate-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-slate-700 focus:outline-none focus:ring-4 focus:ring-white-300 transition-all duration-300 shadow-md hover:shadow-lg"
-          >
-            Send Message
-          </button>
-        </form>
-      </div>
+          <button type="submit" className="w-full bg-slate-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-slate-700 focus:outline-none focus:ring-4 focus:ring-white-300 transition-all duration-300 shadow-md hover:shadow-lg">Submit Form</button>
+      </form>
+     </div>
     </div>
   );
 }
