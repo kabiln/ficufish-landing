@@ -22,7 +22,6 @@ export default function ContactForm() {
   // Handle form submission
   async function handleSubmit(e) {
         e.preventDefault();
-        
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: {
@@ -33,7 +32,6 @@ export default function ContactForm() {
                 access_key: "39cefe42-ef46-4bd9-9354-6a6724a2b325",
                 name: e.target.name.value,
                 email: e.target.email.value,
-                subject: e.target.subject.value,
                 message: e.target.message.value,
             }),
         });
@@ -41,8 +39,6 @@ export default function ContactForm() {
         if (result.success) {
             console.log(result);
         }
-
-
     }
 
   return (
