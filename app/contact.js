@@ -1,35 +1,43 @@
-export default function Contact() {
-      async function handleSubmit(event) {
-          event.preventDefault();
-          const formData = new FormData(event.target);
 
-          formData.append("access_key", "39cefe42-ef46-4bd9-9354-6a6724a2b325");
-
-          const object = Object.fromEntries(formData);
-          const json = JSON.stringify(object);
-
-          const response = await fetch("https://api.web3forms.com/submit", {
-              method: "POST",
-              headers: {
+  export function Contact() {
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
                 "Content-Type": "application/json",
-                Accept: "application/json"
-              },
-              body: json
-          });
-          const result = await response.json();
-          if (result.success) {
-              console.log(result);
-          }
-      }
+                Accept: "application/json",
+            },
+            body: JSON.stringify({
+                access_key: "39cefe42-ef46-4bd9-9354-6a6724a2b325",
+                name: e.target.name.value,
+                email: e.target.email.value,
+                message: e.target.message.value,
+            }),
+        });
+        const result = await response.json();
+        if (result.success) {
+            console.log(result);
+        }
+    }
 
-    return (
-      <>
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="name"/>
-          <input type="email" name="email"/>
-          <textarea name="message"></textarea>
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+          <div>
+              <label htmlFor="name">Name</label>
+              <input type="text" name="name" required placeholder="Your name" />
+          </div>
+          <div>
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" required placeholder="email@example.com" />
+          </div>
+          <div>
+              <label htmlFor="message">Message</label>
+              <textarea name="message" required rows="3" placeholder="Enter Message"></textarea>
+          </div>
           <button type="submit">Submit Form</button>
-        </form>
-      </>
-    );
-  }
+      </form>
+    </>
+  );
+}
