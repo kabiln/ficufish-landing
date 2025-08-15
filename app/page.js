@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 
 import Testimonials from "./testimonials";
 import FadeInOnScroll from "./FadeInOnScroll";
-import ContactForm from "./contact";
+import ContactForm from "./contactform";
 
 import logo from "../public/ficufish.json";
 import humancenter from "../public/human_center.svg";

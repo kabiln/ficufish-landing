@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, User, Book, MessageSquare } from 'lucide-react';
 
-const ContactForm = () => {
+export default function ContactForm() {
   // State to hold the form data
   const [formData, setFormData] = useState({
     name: '',
@@ -20,22 +20,30 @@ const ContactForm = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  async function handleSubmit(e) {
+        e.preventDefault();
+        
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify({
+                access_key: "39cefe42-ef46-4bd9-9354-6a6724a2b325",
+                name: e.target.name.value,
+                email: e.target.email.value,
+                subject: e.target.subject.value,
+                message: e.target.message.value,
+            }),
+        });
+        const result = await response.json();
+        if (result.success) {
+            console.log(result);
+        }
 
-    // The recipient email address
-    const recipientEmail = 'ficufish@gmail.com';
 
-    // Construct the mailto link with the form data
-    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-
-    // Open the user's default email client
-    window.location.href = mailtoLink;
-  };
+    }
 
   return (
     <div className="flex items-center justify-center p-4 sm:p-6">
@@ -112,4 +120,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+//export default ContactForm;
