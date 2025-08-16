@@ -39,7 +39,7 @@ import React, { useState } from 'react';
           <div className="relative">
               <textarea name="message" required rows="3" placeholder="Enter Message" className='w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white transition duration-200 text-gray-400 bg-auto appearance-none'></textarea>
           </div>
-          <button type="submit" className="w-full bg-slate-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-slate-700 focus:outline-none focus:ring-4 focus:ring-white-300 transition-all duration-300 shadow-md hover:shadow-lg">Submit Form</button>
+          <button type="submit" className="w-full bg-slate-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-slate-700 focus:outline-none focus:ring-4 focus:ring-white-300 transition-all duration-300 shadow-md hover:shadow-lg">Send Message</button>
       </form>
       {submissionStatus === "success" && (
         <p className="success-message">Thank you for submitting the form! We'll get back to you soon.</p>

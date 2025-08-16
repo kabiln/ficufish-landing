@@ -32,7 +32,7 @@ const FadeInOnScroll = ({ children, className = '' }) => {
   // 'transition-all duration-1000 ease-out' defines the animation properties
   const animationClasses = `
     transition-all duration-1000 ease-out
-    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-100'}
     ${className}
   `;
 
